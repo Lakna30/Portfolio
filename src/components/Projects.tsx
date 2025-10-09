@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import financeProject from "@/assets/project-finance.jpg";
 import fashionProject from "@/assets/project-fashion.jpg";
+import supplementProject from "@/assets/project-supplement.jpg";
 
 const Projects = () => {
   const projects = [
@@ -11,7 +12,7 @@ const Projects = () => {
       description: "A personal finance management Android app featuring income/expense tracking, budgeting, and spending insights with smart notifications and backup functionality.",
       image: financeProject,
       technologies: ["Kotlin", "XML", "SQLite"],
-      repo: "https://github.com/Lakna30",
+      repo: "https://github.com/Lakna30/Personal-Finance-Tracker",
       demo: "#",
     },
     {
@@ -20,6 +21,14 @@ const Projects = () => {
       image: fashionProject,
       technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
       repo: "https://github.com/Lakna30",
+      demo: "#",
+    },
+    {
+      title: "Gym Supplement Store",
+      description: "A full-featured online fashion store offering user accounts, product catalogs, shopping cart, reviews, and secure authentication.",
+      image: supplementProject,
+      technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+      repo: "https://github.com/Lakna30/Online-supplement-store",
       demo: "#",
     },
   ];

@@ -8,7 +8,7 @@ const Education = () => {
       title: "BSc(Hons) in Information Technology Specializing in Software Engineering",
       institution: "Sri Lanka Institute of Information Technology (SLIIT)",
       year: "2023 - Present",
-      description: "Specializing in Software Engineering with hands-on experience in full-stack development, Mobile application development and project management.",
+      description: "CGPA : 3.49/4.0",
     },
     {
       icon: School,
