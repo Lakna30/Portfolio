@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,13 +14,33 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    
+    try {
+      await emailjs.send(
+        "service_bcz4qgn",
+        "template_j683nnb",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "oRS2nVJI1PUWNknHw"
+      );
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
