@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { Code2 } from "lucide-react";
+import { Code2, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,20 +54,35 @@ const Navigation = () => {
             <span className="text-accent">{"</>"}</span>
           </div>
           
-          <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
-                    activeSection === item.id ? "text-primary glow-text" : "text-muted-foreground"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center gap-4">
+            <ul className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
+                      activeSection === item.id ? "text-primary glow-text" : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="hover:bg-primary/10"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5 text-primary transition-all" />
+              ) : (
+                <Moon className="h-5 w-5 text-primary transition-all" />
+              )}
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

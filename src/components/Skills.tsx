@@ -2,62 +2,52 @@ const Skills = () => {
   const skillCategories = [
     {
       name: "HTML",
-      color: "from-orange-500 to-orange-600",
-      level: 9,
+      level: 90,
       icon: "🌐",
     },
     {
       name: "CSS",
-      color: "from-blue-500 to-blue-600",
-      level: 8,
+      level: 80,
       icon: "🎨",
     },
     {
       name: "JavaScript",
-      color: "from-yellow-400 to-yellow-500",
-      level: 9,
+      level: 90,
       icon: "⚡",
     },
     {
       name: "React",
-      color: "from-cyan-400 to-cyan-500",
-      level: 8,
+      level: 80,
       icon: "⚛️",
     },
     {
       name: "Node.js",
-      color: "from-green-500 to-green-600",
-      level: 8,
+      level: 80,
       icon: "🟢",
     },
     {
       name: "MongoDB",
-      color: "from-green-600 to-green-700",
-      level: 7,
+      level: 70,
       icon: "🍃",
     },
     {
       name: "PHP",
-      color: "from-purple-500 to-purple-600",
-      level: 7,
+      level: 70,
       icon: "🐘",
     },
     {
       name: "MySQL",
-      color: "from-blue-600 to-blue-700",
-      level: 8,
+      level: 80,
       icon: "🗄️",
     },
     {
       name: "Kotlin",
-      color: "from-purple-600 to-purple-700",
-      level: 8,
+      level: 80,
       icon: "📱",
     },
     {
       name: "Android Studio",
-      color: "from-green-400 to-green-500",
-      level: 8,
+      level: 80,
       icon: "🤖",
     },
   ];
@@ -69,7 +59,7 @@ const Skills = () => {
           My Skills
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {skillCategories.map((skill, index) => (
             <div 
               key={skill.name}
@@ -81,25 +71,17 @@ const Skills = () => {
                   <span className="text-2xl">{skill.icon}</span>
                   <span className="font-semibold text-foreground">{skill.name}</span>
                 </div>
+                <span className="text-sm text-muted-foreground font-medium">{skill.level}%</span>
               </div>
               
-              <div className="flex gap-2">
-                {Array.from({ length: 10 }).map((_, dotIndex) => (
-                  <div
-                    key={dotIndex}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      dotIndex < skill.level
-                        ? `bg-gradient-to-r ${skill.color} animate-glow-pulse`
-                        : "bg-muted"
-                    }`}
-                    style={{
-                      boxShadow: dotIndex < skill.level 
-                        ? "0 0 10px currentColor" 
-                        : "none",
-                      animationDelay: `${dotIndex * 0.1}s`,
-                    }}
-                  />
-                ))}
+              <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+                <div 
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 ease-out glow-box"
+                  style={{ 
+                    width: `${skill.level}%`,
+                    animationDelay: `${index * 0.1}s`,
+                  }}
+                />
               </div>
             </div>
           ))}
