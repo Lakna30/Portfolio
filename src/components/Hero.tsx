@@ -1,11 +1,28 @@
-import { Download, Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Instagram, Mail, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile.jpg";
-import { GraduationCap, Code, Smartphone } from "lucide-react";
+import { GraduationCap } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Hero = () => {
+  const { theme, setTheme } = useTheme();
+  
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20">
+    <section id="home" className="relative min-h-screen flex items-center pt-20">
+      {/* Theme Toggle Button */}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="fixed top-24 right-6 z-50 w-12 h-12 rounded-full hover:bg-primary/10 glow-border"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-6 w-6 text-primary transition-all" />
+        ) : (
+          <Moon className="h-6 w-6 text-primary transition-all" />
+        )}
+      </Button>
+      
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
