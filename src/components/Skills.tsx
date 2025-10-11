@@ -1,5 +1,8 @@
 import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaFigma, FaAndroid, FaPhp } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase } from "react-icons/si";
+import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
   const skillCategories = [
@@ -7,49 +10,49 @@ const Skills = () => {
       category: "Frontend Development",
       icon: Code2,
       skills: [
-        { name: "React.js", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "CSS", level: 90 },
-        { name: "HTML", level: 95 },
-        { name: "JavaScript", level: 90 },
+        { name: "React.js", level: 90, Icon: FaReact, color: "text-[#61DAFB]" },
+        { name: "Next.js", level: 85, Icon: SiNextdotjs, color: "text-white dark:text-white" },
+        { name: "Tailwind CSS", level: 90, Icon: SiTailwindcss, color: "text-[#06B6D4]" },
+        { name: "CSS", level: 90, Icon: FaCss3Alt, color: "text-[#1572B6]" },
+        { name: "HTML", level: 95, Icon: FaHtml5, color: "text-[#E34F26]" },
+        { name: "JavaScript", level: 90, Icon: SiJavascript, color: "text-[#F7DF1E]" },
       ],
     },
     {
       category: "Backend Development",
       icon: Server,
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "PHP", level: 75 },
+        { name: "Node.js", level: 85, Icon: FaNodeJs, color: "text-[#339933]" },
+        { name: "Express", level: 80, Icon: SiExpress, color: "text-white dark:text-white" },
+        { name: "PHP", level: 75, Icon: FaPhp, color: "text-[#777BB4]" },
       ],
     },
     {
       category: "Mobile Development",
       icon: Smartphone,
       skills: [
-        { name: "Kotlin", level: 80 },
-        { name: "XML", level: 85 },
+        { name: "Kotlin", level: 80, Icon: SiKotlin, color: "text-[#7F52FF]" },
+        { name: "Android", level: 85, Icon: FaAndroid, color: "text-[#3DDC84]" },
       ],
     },
     {
       category: "Databases",
       icon: Database,
       skills: [
-        { name: "MongoDB", level: 80 },
-        { name: "MySQL", level: 85 },
-        { name: "SQLite", level: 75 },
-        { name: "Firebase", level: 80 },
+        { name: "MongoDB", level: 80, Icon: SiMongodb, color: "text-[#47A248]" },
+        { name: "MySQL", level: 85, Icon: SiMysql, color: "text-[#4479A1]" },
+        { name: "SQLite", level: 75, Icon: SiSqlite, color: "text-[#003B57]" },
+        { name: "Firebase", level: 80, Icon: SiFirebase, color: "text-[#FFCA28]" },
       ],
     },
     {
       category: "Tools & Technologies",
       icon: Wrench,
       skills: [
-        { name: "Github", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Android Studio", level: 85 },
-        { name: "Figma", level: 80 },
+        { name: "Github", level: 90, Icon: FaGithub, color: "text-white dark:text-white" },
+        { name: "VS Code", level: 95, Icon: VscCode, color: "text-[#007ACC]" },
+        { name: "Android Studio", level: 85, Icon: FaAndroid, color: "text-[#3DDC84]" },
+        { name: "Figma", level: 80, Icon: FaFigma, color: "text-[#F24E1E]" },
       ],
     },
   ];
@@ -57,7 +60,7 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-card/30">
+    <section id="skills" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">
           My Skills
@@ -68,7 +71,7 @@ const Skills = () => {
         
         <div className="max-w-6xl mx-auto">
           {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
             {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
@@ -77,7 +80,7 @@ const Skills = () => {
                   onClick={() => setActiveTab(index)}
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeTab === index
-                      ? "bg-primary text-primary-foreground shadow-lg glow-box scale-105"
+                      ? "bg-card border border-primary/50 text-foreground glow-border scale-105"
                       : "bg-card/50 text-muted-foreground hover:bg-card hover:text-foreground"
                   }`}
                 >
@@ -93,7 +96,7 @@ const Skills = () => {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
             {skillCategories[activeTab].skills.map((skill, index) => {
-              const initial = skill.name.charAt(0).toUpperCase();
+              const SkillIcon = skill.Icon;
               return (
                 <div
                   key={skill.name}
@@ -101,8 +104,8 @@ const Skills = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground font-bold text-xl glow-box group-hover:scale-110 transition-transform duration-300">
-                      {initial}
+                    <div className="w-12 h-12 rounded-lg bg-transparent border border-primary/20 flex items-center justify-center text-primary-foreground font-bold text-xl group-hover:scale-110 transition-transform duration-300 group-hover:border-primary/40">
+                      <SkillIcon className={`w-8 h-8 ${skill.color}`} />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
@@ -127,17 +130,6 @@ const Skills = () => {
                 </div>
               );
             })}
-          </div>
-
-          {/* Learning Badge */}
-          <div className="mt-16 text-center">
-            <div className="inline-block px-8 py-4 rounded-2xl bg-card/50 border border-primary/20 glow-border animate-fade-in">
-              <h4 className="font-bold text-foreground mb-2">Always Learning</h4>
-              <p className="text-sm text-muted-foreground max-w-2xl">
-                I am continuously expanding my technical expertise and staying current with emerging technologies. 
-                My current focus includes advanced React patterns, Java development, and cloud-native architecture.
-              </p>
-            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { GraduationCap, School, Award, Users, Dumbbell, Trophy } from "lucide-react";
+import { GraduationCap, School, UserCheck, Users, Medal, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useEffect, useCallback } from "react";
 import {
@@ -29,7 +29,7 @@ const Journey = () => {
       title: "BSc(Hons) in Information Technology Specializing in Software Engineering",
       institution: "Sri Lanka Institute of Information Technology (SLIIT)",
       year: "2023 - Present",
-      description: "CGPA : 3.49/4.0",
+      description: "CGPA : 3.39/4.0",
     },
     {
       icon: School,
@@ -42,32 +42,32 @@ const Journey = () => {
 
   const extracurricular = [
     {
-      icon: Award,
-      title: "Director of Youth Empowerment",
-      organization: "Leo Club University",
-      year: "2024/2025",
-      description: "Leading youth empowerment initiatives and community development programs",
+      icon: UserCheck,
+      title: "Assistant Taekwondo Coach",
+      organization: "Sri Lanka School Taekwondo Federation",
+      year: "2023 - Present",
+      description: "Registered assistant coach supporting school-level athlete training and development",
     },
     {
       icon: Users,
-      title: "Chief Activity Coordinator",
-      organization: "Leo Club University",
-      year: "2023 - 2024",
-      description: "Coordinating and managing club activities and community service projects",
+      title: "Assistant Taekwondo Coach",
+      organization: "District Taekwondo Association - Matara",
+      year: "2023 - Present",
+      description: "Coaching at Sujatha College and Anura College, guiding students in technique and discipline",
     },
     {
-      icon: Dumbbell,
-      title: "Member of Athletic Club",
-      organization: "University Sports Club",
-      year: "2023 - Present",
-      description: "Active participant in university athletic programs and sports activities",
+      icon: Medal,
+      title: "National Level Taekwondo Athlete",
+      organization: "Matara Taekwondo Club",
+      year: "2017 - Present",
+      description: "Represented Sri Lanka at international tournaments and national championships",
     },
     {
       icon: Trophy,
-      title: "Tech Community Volunteer",
-      organization: "Developer Students Club",
+      title: "Member of Taekwondo Team",
+      organization: "SLIIT University Taekwondo Team",
       year: "2023 - Present",
-      description: "Organizing workshops and mentoring junior students in technology",
+      description: "Active participant in university sports programs and activities",
     },
   ];
 
@@ -105,7 +105,7 @@ const Journey = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 md:py-32 bg-card/30">
+    <section id="journey" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text">
           Journey
