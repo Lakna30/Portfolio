@@ -1,5 +1,7 @@
 import { GraduationCap, School, Award, Users, Dumbbell, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useEffect, useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -181,6 +183,12 @@ const Journey = () => {
           </p>
           
           <Carousel
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: true,
+              }),
+            ]}
             opts={{
               align: "start",
               loop: true,
