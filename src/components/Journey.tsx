@@ -1,16 +1,28 @@
 import { GraduationCap, School, Award, Users, Dumbbell, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { useEffect, useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useCallback } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import { useState } from "react";
 
 const Journey = () => {
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) return;
+
+    const intervalId = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [api]);
   const education = [
     {
       icon: GraduationCap,
@@ -183,12 +195,7 @@ const Journey = () => {
           </p>
           
           <Carousel
-            plugins={[
-              Autoplay({
-                delay: 3000,
-                stopOnInteraction: true,
-              }),
-            ]}
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
