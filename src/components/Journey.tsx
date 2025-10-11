@@ -1,6 +1,12 @@
 import { GraduationCap, School, Award, Users, Dumbbell, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Journey = () => {
   const education = [
@@ -51,6 +57,39 @@ const Journey = () => {
     },
   ];
 
+  const memories = [
+    {
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+      caption: "Team Spirit",
+      category: "Sports",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
+      caption: "Leadership Workshop",
+      category: "Leadership",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a",
+      caption: "Community Service",
+      category: "Volunteer",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846",
+      caption: "Tech Events",
+      category: "Technology",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18",
+      caption: "Athletic Meet",
+      category: "Sports",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
+      caption: "Team Achievement",
+      category: "Awards",
+    },
+  ];
+
   return (
     <section id="journey" className="py-20 md:py-32 bg-card/30">
       <div className="container mx-auto px-6">
@@ -62,84 +101,117 @@ const Journey = () => {
           My academic journey and extracurricular activities that shaped my expertise and leadership.
         </p>
 
-        <Tabs defaultValue="education" className="max-w-6xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-12">
-            <TabsTrigger 
-              value="education" 
-              className="text-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-primary-foreground"
-            >
-              Education
-            </TabsTrigger>
-            <TabsTrigger 
-              value="extracurricular"
-              className="text-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-primary-foreground"
-            >
-              Extracurricular Activities
-            </TabsTrigger>
-          </TabsList>
+        {/* Education Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold mb-8 text-center gradient-text">
+            Education
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {education.map((edu, index) => (
+              <Card 
+                key={edu.title}
+                className="p-8 bg-card border-primary/20 hover:border-primary/50 transition-all duration-300 glow-border group animate-fade-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center glow-box group-hover:animate-glow-pulse">
+                  <edu.icon className="h-8 w-8 text-primary-foreground" />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                  {edu.title}
+                </h3>
+                
+                <div className="mb-2">
+                  <p className="text-secondary font-semibold">{edu.institution}</p>
+                  <p className="text-sm text-muted-foreground">{edu.year}</p>
+                </div>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  {edu.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-          <TabsContent value="education" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8">
-              {education.map((edu, index) => (
-                <Card 
-                  key={edu.title}
-                  className="p-8 bg-card border-primary/20 hover:border-primary/50 transition-all duration-300 glow-border group"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+        {/* Extracurricular Activities Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold mb-8 text-center gradient-text">
+            Extracurricular Activities
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {extracurricular.map((activity, index) => (
+              <Card 
+                key={activity.title}
+                className="p-8 bg-card border-primary/20 hover:border-primary/50 transition-all duration-300 glow-border group relative overflow-hidden animate-fade-in"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
+                
+                <div className="relative z-10">
                   <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center glow-box group-hover:animate-glow-pulse">
-                    <edu.icon className="h-8 w-8 text-primary-foreground" />
+                    <activity.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                   
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {edu.title}
+                    {activity.title}
                   </h3>
                   
                   <div className="mb-2">
-                    <p className="text-secondary font-semibold">{edu.institution}</p>
-                    <p className="text-sm text-muted-foreground">{edu.year}</p>
+                    <p className="text-secondary font-semibold">{activity.organization}</p>
+                    <p className="text-sm text-muted-foreground">{activity.year}</p>
                   </div>
                   
                   <p className="text-muted-foreground leading-relaxed">
-                    {edu.description}
+                    {activity.description}
                   </p>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-          <TabsContent value="extracurricular" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8">
-              {extracurricular.map((activity, index) => (
-                <Card 
-                  key={activity.title}
-                  className="p-8 bg-card border-primary/20 hover:border-primary/50 transition-all duration-300 glow-border group relative overflow-hidden"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
-                  
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center glow-box group-hover:animate-glow-pulse">
-                      <activity.icon className="h-8 w-8 text-primary-foreground" />
+        {/* Journey Memories Section */}
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-center gradient-text">
+            Journey Memories
+          </h3>
+          <p className="text-center text-muted-foreground mb-12">
+            A glimpse into my journey, memories, and moments that define who I am.
+          </p>
+          
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {memories.map((memory, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="group relative overflow-hidden rounded-lg aspect-square animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <img
+                      src={memory.image}
+                      alt={memory.caption}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
+                          {memory.category}
+                        </span>
+                        <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
+                      </div>
                     </div>
-                    
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                      {activity.title}
-                    </h3>
-                    
-                    <div className="mb-2">
-                      <p className="text-secondary font-semibold">{activity.organization}</p>
-                      <p className="text-sm text-muted-foreground">{activity.year}</p>
-                    </div>
-                    
-                    <p className="text-muted-foreground leading-relaxed">
-                      {activity.description}
-                    </p>
                   </div>
-                </Card>
+                </CarouselItem>
               ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2" />
+            <CarouselNext className="right-0 translate-x-1/2" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
