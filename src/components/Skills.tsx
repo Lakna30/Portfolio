@@ -1,5 +1,6 @@
 import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaFigma, FaAndroid, FaPhp } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
@@ -60,14 +61,26 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="skills" className="py-20 md:py-32">
+    <section id="skills" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           My Skills
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
           Here are the technologies and tools I work with to bring ideas to life
-        </p>
+        </motion.p>
         
         <div className="max-w-6xl mx-auto">
           {/* Category Tabs */}

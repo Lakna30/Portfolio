@@ -6,10 +6,12 @@ import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <AnimatedBackground />
       <Navigation />
       <Hero />
       <About />
