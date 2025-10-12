@@ -1,5 +1,8 @@
 import { GraduationCap, School, UserCheck, Users, Medal, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import GCS from "@/assets/GCS International.jpg";
+import Pair from "@/assets/Pair.jpg";
+import Korean24 from "@/assets/Korean24.jpg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -73,17 +76,17 @@ const Journey = () => {
 
   const memories = [
     {
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+      image: GCS,
       caption: "Team Spirit",
       category: "Sports",
     },
     {
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
+      image: Pair,
       caption: "Leadership Workshop",
       category: "Leadership",
     },
     {
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a",
+      image: Korean24,
       caption: "Community Service",
       category: "Volunteer",
     },
