@@ -1,8 +1,21 @@
 import { GraduationCap, School, UserCheck, Users, Medal, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import GCS from "@/assets/GCS International.jpg";
-import Pair from "@/assets/Pair.jpg";
+import NationalPair25 from "@/assets/NationalPair25.jpg";
+import NationalInd25 from "@/assets/NationalInd25.jpg";
+import NationalFree25 from "@/assets/NationalFree25.jpg";
+import Korean23 from "@/assets/Korean23.jpg";
 import Korean24 from "@/assets/Korean24.jpg";
+import Korean18 from "@/assets/Korean18.jpg";
+import Southern from "@/assets/Southern.jpg";
+import Coaching25 from "@/assets/Coaching25.jpg";
+import Coaching24 from "@/assets/Coaching24.jpg";
+import Independance23 from "@/assets/Independance23.png";
+import Independance24 from "@/assets/Independance24.jpg";
+import Usports from "@/assets/Usports.jpg";
+import Colors24 from "@/assets/Colors24.jpg";
+import SouthAsian from "@/assets/South Asian.jpg";
+import Referee from "@/assets/Referee.jpg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -77,33 +90,83 @@ const Journey = () => {
   const memories = [
     {
       image: GCS,
-      caption: "Team Spirit",
+      caption: "GCS International Championship 2023",
       category: "Sports",
     },
     {
-      image: Pair,
-      caption: "Leadership Workshop",
-      category: "Leadership",
+      image: NationalPair25,
+      caption: "National Poomsae Championship 2025",
+      category: "Sports",
+    },
+    {
+      image: Colors24,
+      caption: "SLIIT Colors Awards 2025",
+      category: "Awards",
+    },
+    {
+      image: SouthAsian,
+      caption: "South Asian Taekwondo Championship 2023",
+      category: "Sports",
+    },
+    {
+      image: Korean23,
+      caption: "Korean Ambassador's Cup Taekwondo Championship 2023",
+      category: "Sports",
+    },
+    {
+      image: Coaching25,
+      caption: "School Taekwondo Instructor Program 2025",
+      category: "Coaching",
     },
     {
       image: Korean24,
-      caption: "Community Service",
-      category: "Volunteer",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846",
-      caption: "Tech Events",
-      category: "Technology",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18",
-      caption: "Athletic Meet",
+      caption: "Korean Ambassador's Cup Taekwondo Championship 2024",
       category: "Sports",
     },
     {
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
-      caption: "Team Achievement",
-      category: "Awards",
+      image: NationalFree25,
+      caption: "National Poomsae Championship 2025",
+      category: "Sports",
+    },
+    {
+      image: Korean18,
+      caption: "Korean Ambassador's Cup Taekwondo Championship 2018",
+      category: "Sports",
+    },
+    {
+      image: Coaching24,
+      caption: "School Taekwondo Instructor Program 2024",
+      category: "Coaching",
+    },
+    {
+      image: Southern,
+      caption: "Southern Province Taekwondo Championship 2022",
+      category: "Sports",
+    },
+    {
+      image: Independance23,
+      caption: "Independance Cup Taekwondo Championship 2023",
+      category: "Sports",
+    },
+    {
+      image: NationalInd25,
+      caption: "National Poomsae Championship 2025",
+      category: "Sports",
+    },
+    {
+      image: Usports,
+      caption: "NSBM USPORTS 2023",
+      category: "Sports",
+    },
+    {
+      image: Independance24,
+      caption: "Independance Cup Taekwondo Championship 2024",
+      category: "Sports",
+    },
+    {
+      image: Referee,
+      caption: "Sportsmeet Assistant Taekwondo Referee",
+      category: "Refereeing",
     },
   ];
 
