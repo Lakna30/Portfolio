@@ -229,8 +229,8 @@ const Journey = () => {
 
         {/* Education Section */}
         <div className="mb-20">
-          <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+        <motion.h3 
+            className="text-3xl font-bold mb-8 text-center text-[hsl(var(--heading-light))]"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -278,7 +278,7 @@ const Journey = () => {
         {/* Extracurricular Activities Section */}
         <div className="mb-20">
           <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+            className="text-3xl font-bold mb-8 text-center text-[hsl(var(--heading-light))]"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -341,7 +341,7 @@ const Journey = () => {
         {/* Journey Memories Section */}
         <div className="max-w-5xl mx-auto">
           <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+            className="text-3xl font-bold mb-8 text-center text-[hsl(var(--heading-light))]"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

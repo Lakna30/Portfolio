@@ -75,7 +75,7 @@ const Hero = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-xl md:text-2xl font-semibold text-primary"
+                  className="text-xl md:text-2xl font-semibold text-[hsl(var(--heading-light))]"
                 >
                   {roles[currentRole]}
                 </motion.div>

@@ -75,7 +75,7 @@ const Projects = () => {
               
               <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <motion.h3 
-                  className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors"
+                  className="text-2xl font-bold text-[hsl(var(--heading-light))] group-hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   {project.title}
