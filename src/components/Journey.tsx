@@ -18,20 +18,27 @@ import SouthAsian from "@/assets/South Asian.jpg";
 import Referee from "@/assets/Referee.jpg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
 const Journey = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
 
     const intervalId = setInterval(() => {
       api.scrollNext();
@@ -357,58 +364,79 @@ const Journey = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative"
           >
             <Carousel
               setApi={setApi}
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
               }}
               className="w-full"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
-                {memories.map((memory, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <motion.div 
-                      className="group relative overflow-hidden rounded-lg aspect-square"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <motion.img
-                        src={memory.image}
-                        alt={memory.caption}
-                        className="w-full h-full object-cover"
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ duration: 0.5 }}
-                      />
+                {memories.map((memory, index) => {
+                  const isCentered = index === current;
+                  return (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                       <motion.div 
-                        className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
+                        className="relative overflow-hidden rounded-lg aspect-square"
+                        animate={{
+                          scale: isCentered ? 1.05 : 0.9,
+                          opacity: isCentered ? 1 : 0.5,
+                        }}
+                        transition={{ duration: 0.5 }}
                       >
+                        <img
+                          src={memory.image}
+                          alt={memory.caption}
+                          className="w-full h-full object-cover"
+                        />
                         <motion.div 
-                          className="absolute bottom-0 left-0 right-0 p-6"
-                          initial={{ y: 20, opacity: 0 }}
-                          whileHover={{ y: 0, opacity: 1 }}
+                          className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"
+                          animate={{ opacity: isCentered ? 1 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
-                            {memory.category}
-                          </span>
-                          <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
+                          <motion.div 
+                            className="absolute bottom-0 left-0 right-0 p-6"
+                            animate={{ 
+                              y: isCentered ? 0 : 20,
+                              opacity: isCentered ? 1 : 0
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
+                              {memory.category}
+                            </span>
+                            <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
+                          </motion.div>
                         </motion.div>
                       </motion.div>
-                    </motion.div>
-                  </CarouselItem>
-                ))}
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
-              <CarouselPrevious className="left-0 -translate-x-1/2" />
-              <CarouselNext className="right-0 translate-x-1/2" />
             </Carousel>
+
+            {/* Modern Navigation Controls */}
+            <div className="flex justify-center gap-4 mt-8">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full w-12 h-12 bg-card/50 backdrop-blur-sm border-primary/30 hover:border-primary hover:bg-primary/10 transition-all"
+                onClick={() => api?.scrollPrev()}
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full w-12 h-12 bg-card/50 backdrop-blur-sm border-primary/30 hover:border-primary hover:bg-primary/10 transition-all"
+                onClick={() => api?.scrollNext()}
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>

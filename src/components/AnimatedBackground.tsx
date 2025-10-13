@@ -32,15 +32,36 @@ const AnimatedBackground = () => {
         />
       ))}
       
-      {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), 
-                           linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: "50px 50px",
-        }}
-      />
+      {/* Floating dots/particles - similar to reference website */}
+      {[...Array(50)].map((_, i) => (
+        <motion.div
+          key={`dot-${i}`}
+          className="absolute rounded-full"
+          style={{
+            width: Math.random() * 6 + 2,
+            height: Math.random() * 6 + 2,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            background: i % 3 === 0 
+              ? "hsl(var(--primary))"
+              : i % 3 === 1
+              ? "hsl(var(--secondary))"
+              : "hsl(var(--accent))",
+            opacity: Math.random() * 0.3 + 0.1,
+          }}
+          animate={{
+            y: [0, Math.random() * -100 - 50],
+            x: [0, Math.random() * 40 - 20],
+            opacity: [Math.random() * 0.3 + 0.1, 0],
+          }}
+          transition={{
+            duration: Math.random() * 8 + 5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 5,
+          }}
+        />
+      ))}
     </div>
   );
 };
