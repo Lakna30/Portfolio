@@ -178,7 +178,7 @@ const Journey = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="journey" className="py-20 md:py-32 pb-0 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         {[...Array(20)].map((_, i) => (
