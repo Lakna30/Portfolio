@@ -178,35 +178,8 @@ const Journey = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 md:py-32 pb-0 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl"
-            style={{
-              width: Math.random() * 300 + 50,
-              height: Math.random() * 300 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              scale: [1, Math.random() + 0.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="journey" className="py-20 md:py-32 pb-0 relative">
+      <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
           initial={{ opacity: 0, y: -50 }}
@@ -372,46 +345,62 @@ const Journey = () => {
                 align: "center",
                 loop: true,
               }}
-              className="w-full"
+              className="w-full overflow-visible"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-0 md:-ml-0">
                 {memories.map((memory, index) => {
                   const isCentered = index === current;
                   return (
-                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                      <motion.div 
-                        className="relative overflow-hidden rounded-lg aspect-square"
-                        animate={{
-                          scale: isCentered ? 1.05 : 0.9,
-                          opacity: isCentered ? 1 : 0.5,
-                        }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <img
-                          src={memory.image}
-                          alt={memory.caption}
-                          className="w-full h-full object-cover"
-                        />
+                    <CarouselItem key={index} className="pl-0 pr-0 md:pl-0 md:pr-0 md:basis-1/2 lg:basis-1/3">
+                      <div className="px-1 md:px-2">
                         <motion.div 
-                          className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent"
-                          animate={{ opacity: isCentered ? 1 : 0 }}
-                          transition={{ duration: 0.3 }}
+                          className="relative overflow-hidden rounded-lg aspect-square"
+                          style={{
+                            transformOrigin: 'center',
+                            transformStyle: 'preserve-3d',
+                            backfaceVisibility: 'hidden',
+                            WebkitBackfaceVisibility: 'hidden',
+                          }}
+                          animate={{
+                            scale: isCentered ? 1 : 0.95,
+                            opacity: isCentered ? 1 : 0.7,
+                          }}
+                          transition={{ 
+                            duration: 0.5,
+                            ease: [0.33, 1, 0.68, 1]
+                          }}
                         >
+                          <img
+                            src={memory.image}
+                            alt={memory.caption}
+                            className="w-full h-full object-cover select-none"
+                            draggable={false}
+                          />
                           <motion.div 
-                            className="absolute bottom-0 left-0 right-0 p-6"
-                            animate={{ 
-                              y: isCentered ? 0 : 20,
-                              opacity: isCentered ? 1 : 0
+                            className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent"
+                            style={{
+                              backfaceVisibility: 'hidden',
+                              WebkitBackfaceVisibility: 'hidden',
                             }}
+                            animate={{ opacity: isCentered ? 1 : 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
-                              {memory.category}
-                            </span>
-                            <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
+                            <motion.div 
+                              className="absolute bottom-0 left-0 right-0 p-6"
+                              animate={{ 
+                                y: isCentered ? 0 : 20,
+                                opacity: isCentered ? 1 : 0
+                              }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
+                              <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
+                                {memory.category}
+                              </span>
+                            </motion.div>
                           </motion.div>
                         </motion.div>
-                      </motion.div>
+                      </div>
                     </CarouselItem>
                   );
                 })}
