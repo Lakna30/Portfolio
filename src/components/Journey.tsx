@@ -393,7 +393,7 @@ const Journey = () => {
                           className="w-full h-full object-cover"
                         />
                         <motion.div 
-                          className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"
+                          className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent"
                           animate={{ opacity: isCentered ? 1 : 0 }}
                           transition={{ duration: 0.3 }}
                         >

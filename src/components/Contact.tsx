@@ -93,7 +93,7 @@ const Contact = () => {
             </Button>
           </form>
           
-          <div className="mt-12 pt-12 border-t border-border">
+          <div className="mt-12 pt-12">
             <div className="text-center space-y-4">
               <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
               

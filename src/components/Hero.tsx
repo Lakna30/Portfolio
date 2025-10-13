@@ -114,9 +114,12 @@ const Hero = () => {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity glow-box font-semibold"
+                  asChild
                 >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
+                  <a href="/resume.pdf" download="Lakna_Vidanapathirana_Resume.pdf">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Resume
+                  </a>
                 </Button>
               </motion.div>
               
