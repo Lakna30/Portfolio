@@ -53,44 +53,44 @@ All colors MUST be HSL.
   }
 
   .light {
-    --background: 0 0% 98%;
-    --foreground: 270 50% 15%;
+    --background: 0 0% 100%;
+    --foreground: 260 50% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 270 50% 15%;
+    --card: 0 0% 98%;
+    --card-foreground: 260 50% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 270 50% 15%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 260 50% 10%;
 
-    --primary: 320 85% 55%;
+    --primary: 280 80% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 70% 50%;
+    --secondary: 270 75% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 270 20% 92%;
-    --muted-foreground: 270 20% 40%;
+    --muted: 260 30% 94%;
+    --muted-foreground: 260 30% 35%;
 
-    --accent: 290 85% 60%;
+    --accent: 285 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 88%;
-    --input: 270 20% 88%;
-    --ring: 320 85% 55%;
+    --border: 260 25% 85%;
+    --input: 260 25% 90%;
+    --ring: 280 80% 50%;
 
-    --glow-primary: 320 85% 55%;
-    --glow-secondary: 280 70% 50%;
-    --glow-accent: 290 85% 60%;
+    --glow-primary: 280 80% 50%;
+    --glow-secondary: 270 75% 45%;
+    --glow-accent: 285 85% 55%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(320, 85%, 55%), hsl(280, 70%, 50%));
-    --gradient-glow: linear-gradient(135deg, hsl(320, 85%, 55%), hsl(290, 85%, 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(280, 80%, 50%), hsl(270, 75%, 45%));
+    --gradient-glow: linear-gradient(135deg, hsl(280, 80%, 50%), hsl(285, 85%, 55%));
     
-    --shadow-glow-primary: 0 0 30px hsl(320 85% 55% / 0.3);
-    --shadow-glow-secondary: 0 0 30px hsl(280 70% 50% / 0.3);
-    --shadow-glow-accent: 0 0 20px hsl(290 85% 60% / 0.25);
+    --shadow-glow-primary: 0 0 35px hsl(280 80% 50% / 0.35);
+    --shadow-glow-secondary: 0 0 30px hsl(270 75% 45% / 0.3);
+    --shadow-glow-accent: 0 0 25px hsl(285 85% 55% / 0.3);
   }
 }
 
@@ -110,7 +110,7 @@ All colors MUST be HSL.
   }
 
   .light body {
-    background: linear-gradient(180deg, hsl(0, 0%, 98%) 0%, hsl(270, 20%, 95%) 50%, hsl(0, 0%, 98%) 100%);
+    background: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(270, 30%, 97%) 50%, hsl(0, 0%, 100%) 100%);
   }
 }
 
