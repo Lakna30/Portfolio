@@ -377,7 +377,7 @@ const Journey = () => {
                             draggable={false}
                           />
                           <motion.div 
-                            className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent"
+                            className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent dark:from-background/80 dark:via-background/30 from-background/30 via-background/10"
                             style={{
                               backfaceVisibility: 'hidden',
                               WebkitBackfaceVisibility: 'hidden',

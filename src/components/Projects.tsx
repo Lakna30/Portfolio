@@ -70,7 +70,7 @@ const Projects = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 dark:block hidden"></div>
               </motion.div>
               
               <div className="p-6 space-y-4 flex-1 flex flex-col">
