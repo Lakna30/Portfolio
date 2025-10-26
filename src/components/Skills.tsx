@@ -107,43 +107,39 @@ const Skills = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             {skillCategories[activeTab].skills.map((skill, index) => {
               const SkillIcon = skill.Icon;
               return (
-                <div
+                <motion.div
                   key={skill.name}
-                  className="group animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="group flex flex-col items-center gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ scale: 1.1 }}
                 >
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 rounded-lg bg-transparent border border-primary/20 flex items-center justify-center text-primary-foreground font-bold text-xl group-hover:scale-110 transition-transform duration-300 group-hover:border-primary/40">
-                      <SkillIcon className={`w-8 h-8 ${skill.color}`} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                        {skill.name}
-                      </h3>
-                      <span className="text-sm text-muted-foreground">
-                        {skill.level}%
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-3 bg-muted/50 rounded-full overflow-hidden ml-16">
-                    <div
-                      className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full transition-all duration-1000 ease-out group-hover:shadow-lg"
-                      style={{
-                        width: `${skill.level}%`,
-                        animation: `fade-in 1.2s ease-out ${index * 0.1}s both`,
-                        boxShadow: "0 0 20px hsl(var(--glow-primary) / 0.4)",
-                      }}
-                    />
-                  </div>
-                </div>
+                  <motion.div 
+                    className="w-20 h-20 rounded-xl bg-card border border-primary/20 flex items-center justify-center group-hover:border-primary/60 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]"
+                    whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <SkillIcon className={`w-12 h-12 ${skill.color} transition-transform duration-300`} />
+                  </motion.div>
+                  <h3 className="font-semibold text-foreground text-center group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
