@@ -7,7 +7,7 @@ const About = () => {
   return <section id="about" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-heading-primary"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,7 +48,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-primary dark:text-[#a401e4]"
+              className="text-2xl md:text-3xl font-bold text-primary"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

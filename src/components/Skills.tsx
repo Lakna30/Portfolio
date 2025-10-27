@@ -64,7 +64,7 @@ const Skills = () => {
     <section id="skills" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-heading-primary"
+          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

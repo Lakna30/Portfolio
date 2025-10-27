@@ -42,12 +42,8 @@ All colors MUST be HSL.
     --glow-secondary: 270 85% 60%;
     --glow-accent: 285 95% 68%;
     
-    --heading-primary: 285 100% 82%;
-    --heading-secondary: 285 99% 45%;
-    
     --gradient-primary: linear-gradient(135deg, hsl(280, 90%, 65%), hsl(270, 85%, 60%));
     --gradient-glow: linear-gradient(135deg, hsl(280, 90%, 65%), hsl(285, 95%, 68%));
-    --gradient-heading: linear-gradient(135deg, hsl(285, 100%, 82%), hsl(280, 90%, 70%));
     
     --shadow-glow-primary: 0 0 50px hsl(280 90% 65% / 0.6);
     --shadow-glow-secondary: 0 0 45px hsl(270 85% 60% / 0.5);
@@ -141,31 +137,5 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  
-  .gradient-heading-primary {
-    background: var(--gradient-heading);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .dark .gradient-heading-primary {
-    color: hsl(var(--heading-primary));
-    background: none;
-    -webkit-text-fill-color: currentColor;
-  }
-  
-  .gradient-heading-secondary {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .dark .gradient-heading-secondary {
-    color: hsl(var(--heading-secondary));
-    background: none;
-    -webkit-text-fill-color: currentColor;
   }
 }

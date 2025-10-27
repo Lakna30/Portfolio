@@ -63,7 +63,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="gradient-heading-primary">Lakna Vidanapathirana</span>
+              <span className="gradient-text">Lakna Vidanapathirana</span>
             </motion.h1>
             
             {/* Animated Roles */}
@@ -75,7 +75,7 @@ const Hero = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-xl md:text-2xl font-semibold text-primary dark:text-[#e4a2ff]"
+                  className="text-xl md:text-2xl font-semibold text-primary"
                 >
                   {roles[currentRole]}
                 </motion.div>
