@@ -1,8 +1,8 @@
 import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaFigma, FaAndroid, FaPhp } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase } from "react-icons/si";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaAndroid, FaPhp } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase, SiFigma } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
@@ -12,7 +12,7 @@ const Skills = () => {
       icon: Code2,
       skills: [
         { name: "React.js", level: 90, Icon: FaReact, color: "text-[#61DAFB]" },
-        { name: "Next.js", level: 85, Icon: SiNextdotjs, color: "text-white dark:text-white" },
+        { name: "Next.js", level: 85, Icon: SiNextdotjs, color: "text-gray-900 dark:text-white" },
         { name: "Tailwind CSS", level: 90, Icon: SiTailwindcss, color: "text-[#06B6D4]" },
         { name: "CSS", level: 90, Icon: FaCss3Alt, color: "text-[#1572B6]" },
         { name: "HTML", level: 95, Icon: FaHtml5, color: "text-[#E34F26]" },
@@ -24,7 +24,7 @@ const Skills = () => {
       icon: Server,
       skills: [
         { name: "Node.js", level: 85, Icon: FaNodeJs, color: "text-[#339933]" },
-        { name: "Express", level: 80, Icon: SiExpress, color: "text-white dark:text-white" },
+        { name: "Express", level: 80, Icon: SiExpress, color: "text-gray-900 dark:text-white" },
         { name: "PHP", level: 75, Icon: FaPhp, color: "text-[#777BB4]" },
       ],
     },
@@ -50,10 +50,25 @@ const Skills = () => {
       category: "Tools & Technologies",
       icon: Wrench,
       skills: [
-        { name: "Github", level: 90, Icon: FaGithub, color: "text-white dark:text-white" },
-        { name: "VS Code", level: 95, Icon: VscCode, color: "text-[#007ACC]" },
-        { name: "Android Studio", level: 85, Icon: FaAndroid, color: "text-[#3DDC84]" },
-        { name: "Figma", level: 80, Icon: FaFigma, color: "text-[#F24E1E]" },
+        { name: "GitHub", level: 90, Icon: FaGithub, color: "text-gray-900 dark:text-white" },
+        { 
+          name: "VS Code", 
+          level: 95, 
+          Icon: VscCode, 
+          color: "text-[#007ACC]" 
+        },
+        { 
+          name: "Android Studio", 
+          level: 85, 
+          Icon: FaAndroid, 
+          color: "text-[#3DDC84]" 
+        },
+        { 
+          name: "Figma", 
+          level: 80, 
+          Icon: SiFigma, 
+          color: "text-[#F24E1E]" 
+        },
       ],
     },
   ];
@@ -93,7 +108,7 @@ const Skills = () => {
                   onClick={() => setActiveTab(index)}
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeTab === index
-                      ? "bg-card border border-primary/50 text-foreground glow-border scale-105"
+                      ? "bg-gradient-to-r from-primary to-secondary text-white border border-transparent shadow-lg shadow-primary/20 scale-105"
                       : "bg-card/50 text-muted-foreground hover:bg-card hover:text-foreground"
                   }`}
                 >
