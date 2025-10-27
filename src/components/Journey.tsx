@@ -181,7 +181,7 @@ const Journey = () => {
     <section id="journey" className="py-20 md:py-32 pb-0 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
+          className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-heading-primary"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -203,7 +203,7 @@ const Journey = () => {
         {/* Education Section */}
         <div className="mb-20">
           <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+            className="text-3xl font-bold mb-8 text-center gradient-heading-secondary"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -251,7 +251,7 @@ const Journey = () => {
         {/* Extracurricular Activities Section */}
         <div className="mb-20">
           <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+            className="text-3xl font-bold mb-8 text-center gradient-heading-secondary"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -314,7 +314,7 @@ const Journey = () => {
         {/* Journey Memories Section */}
         <div className="max-w-5xl mx-auto">
           <motion.h3 
-            className="text-3xl font-bold mb-8 text-center gradient-text"
+            className="text-3xl font-bold mb-8 text-center gradient-heading-secondary"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -377,7 +377,7 @@ const Journey = () => {
                             draggable={false}
                           />
                           <motion.div 
-                            className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent dark:from-background/80 dark:via-background/30 from-background/30 via-background/10"
+                            className="absolute inset-0 bg-gradient-to-t from-background/30 via-background/10 to-transparent dark:from-background/80 dark:via-background/30"
                             style={{
                               backfaceVisibility: 'hidden',
                               WebkitBackfaceVisibility: 'hidden',
