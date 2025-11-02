@@ -173,7 +173,7 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 dark:opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-40 hidden dark:block" />
                 </div>
                 
                 <div className="p-6 space-y-3 flex-1 flex flex-col">
