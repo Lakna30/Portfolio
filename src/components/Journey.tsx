@@ -377,27 +377,17 @@ const Journey = () => {
                             draggable={false}
                           />
                           <motion.div 
-                            className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent dark:from-background/80 dark:via-background/30 from-background/30 via-background/10"
-                            style={{
-                              backfaceVisibility: 'hidden',
-                              WebkitBackfaceVisibility: 'hidden',
+                            className="absolute bottom-0 left-0 right-0 p-4 backdrop-blur-md bg-background/70 dark:bg-background/70 border-t border-primary/20"
+                            animate={{ 
+                              y: isCentered ? 0 : 20,
+                              opacity: isCentered ? 1 : 0
                             }}
-                            animate={{ opacity: isCentered ? 1 : 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <motion.div 
-                              className="absolute bottom-0 left-0 right-0 p-6"
-                              animate={{ 
-                                y: isCentered ? 0 : 20,
-                                opacity: isCentered ? 1 : 0
-                              }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <h4 className="text-lg font-bold text-foreground">{memory.caption}</h4>
-                              <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-2 glow-text">
-                                {memory.category}
-                              </span>
-                            </motion.div>
+                            <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary dark:text-primary border border-primary/30 text-xs font-bold rounded-full backdrop-blur-sm shadow-lg">
+                              {memory.category}
+                            </span>
+                            <h4 className="text-base font-bold text-foreground dark:text-foreground drop-shadow-lg">{memory.caption}</h4>
                           </motion.div>
                         </motion.div>
                       </div>
