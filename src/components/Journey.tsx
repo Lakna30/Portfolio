@@ -378,14 +378,14 @@ const Journey = () => {
                               draggable={false}
                             />
                             <motion.div 
-                              className="absolute bottom-0 left-0 right-0 p-4 backdrop-blur-md bg-background/80 border-t border-primary/20"
+                              className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/95 via-background/80 to-transparent border-t-0"
                               animate={{ 
                                 y: isCentered ? 0 : 100,
                                 opacity: isCentered ? 1 : 0
                               }}
                               transition={{ duration: 0.3 }}
                             >
-                              <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/30 to-secondary/30 text-primary font-semibold text-xs rounded-full border border-primary/40">
+                              <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/30 to-secondary/30 text-black dark:text-white font-semibold text-xs rounded-full border border-primary/40">
                                 {memory.category}
                               </span>
                               <h4 className="text-sm font-bold text-foreground drop-shadow-lg">{memory.caption}</h4>
