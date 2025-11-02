@@ -354,7 +354,7 @@ const Journey = () => {
                     <CarouselItem key={index} className="pl-0 pr-0 md:pl-0 md:pr-0 md:basis-1/2 lg:basis-1/3">
                       <div className="px-1 md:px-2">
                         <motion.div 
-                          className="relative overflow-hidden rounded-lg aspect-square"
+                          className="relative overflow-hidden rounded-lg"
                           style={{
                             transformOrigin: 'center',
                             transformStyle: 'preserve-3d',
@@ -370,24 +370,26 @@ const Journey = () => {
                             ease: [0.33, 1, 0.68, 1]
                           }}
                         >
-                          <img
-                            src={memory.image}
-                            alt={memory.caption}
-                            className="w-full h-full object-cover select-none"
-                            draggable={false}
-                          />
+                          <div className="aspect-square overflow-hidden rounded-lg">
+                            <img
+                              src={memory.image}
+                              alt={memory.caption}
+                              className="w-full h-full object-cover select-none"
+                              draggable={false}
+                            />
+                          </div>
                           <motion.div 
-                            className="absolute bottom-0 left-0 right-0 p-4 backdrop-blur-md bg-background/70 dark:bg-background/70 border-t border-primary/20"
+                            className="mt-3 p-3 rounded-lg backdrop-blur-md bg-card/70 border border-primary/20"
                             animate={{ 
                               y: isCentered ? 0 : 20,
                               opacity: isCentered ? 1 : 0
                             }}
                             transition={{ duration: 0.3 }}
                           >
-                            <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary dark:text-primary border border-primary/30 text-xs font-bold rounded-full backdrop-blur-sm shadow-lg">
+                            <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary dark:text-primary border border-primary/30 text-xs font-bold rounded-full backdrop-blur-sm">
                               {memory.category}
                             </span>
-                            <h4 className="text-base font-bold text-foreground dark:text-foreground drop-shadow-lg">{memory.caption}</h4>
+                            <h4 className="text-sm font-bold text-foreground dark:text-foreground">{memory.caption}</h4>
                           </motion.div>
                         </motion.div>
                       </div>
