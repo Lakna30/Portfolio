@@ -18,7 +18,7 @@ import SouthAsian from "@/assets/South Asian.jpg";
 import Referee from "@/assets/Referee.jpg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -26,10 +26,17 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Journey = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [showDialog, setShowDialog] = useState(false);
+  const [selectedMemory, setSelectedMemory] = useState<typeof memories[0] | null>(null);
 
   useEffect(() => {
     if (!api) return;
@@ -37,7 +44,10 @@ const Journey = () => {
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
+      const newIndex = api.selectedScrollSnap();
+      setCurrent(newIndex);
+      setSelectedMemory(memories[newIndex]);
+      setShowDialog(true);
     });
 
     const intervalId = setInterval(() => {
@@ -354,7 +364,7 @@ const Journey = () => {
                     <CarouselItem key={index} className="pl-0 pr-0 md:pl-0 md:pr-0 md:basis-1/2 lg:basis-1/3">
                       <div className="px-1 md:px-2">
                         <motion.div 
-                          className="relative overflow-hidden rounded-lg"
+                          className="relative overflow-hidden rounded-lg cursor-pointer"
                           style={{
                             transformOrigin: 'center',
                             transformStyle: 'preserve-3d',
@@ -369,6 +379,10 @@ const Journey = () => {
                             duration: 0.5,
                             ease: [0.33, 1, 0.68, 1]
                           }}
+                          onClick={() => {
+                            setSelectedMemory(memory);
+                            setShowDialog(true);
+                          }}
                         >
                           <div className="aspect-square overflow-hidden rounded-lg">
                             <img
@@ -378,19 +392,6 @@ const Journey = () => {
                               draggable={false}
                             />
                           </div>
-                          <motion.div 
-                            className="mt-3 p-3 rounded-lg backdrop-blur-md bg-card/70 border border-primary/20"
-                            animate={{ 
-                              y: isCentered ? 0 : 20,
-                              opacity: isCentered ? 1 : 0
-                            }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <span className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary dark:text-primary border border-primary/30 text-xs font-bold rounded-full backdrop-blur-sm">
-                              {memory.category}
-                            </span>
-                            <h4 className="text-sm font-bold text-foreground dark:text-foreground">{memory.caption}</h4>
-                          </motion.div>
                         </motion.div>
                       </div>
                     </CarouselItem>
@@ -398,6 +399,46 @@ const Journey = () => {
                 })}
               </CarouselContent>
             </Carousel>
+
+            {/* Popup Dialog */}
+            <Dialog open={showDialog} onOpenChange={setShowDialog}>
+              <DialogContent className="max-w-4xl p-0 bg-background/95 backdrop-blur-xl border-primary/30">
+                <DialogTitle className="sr-only">
+                  {selectedMemory?.caption}
+                </DialogTitle>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-4 top-4 z-50 rounded-full bg-background/80 hover:bg-background/95 border border-primary/30"
+                  onClick={() => setShowDialog(false)}
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+                {selectedMemory && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col"
+                  >
+                    <div className="relative overflow-hidden rounded-t-lg">
+                      <img
+                        src={selectedMemory.image}
+                        alt={selectedMemory.caption}
+                        className="w-full h-auto max-h-[70vh] object-contain"
+                      />
+                    </div>
+                    <div className="p-6 bg-card/50 backdrop-blur-sm border-t border-primary/20">
+                      <span className="inline-block px-4 py-2 mb-3 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary border border-primary/30 text-sm font-bold rounded-full">
+                        {selectedMemory.category}
+                      </span>
+                      <h3 className="text-xl font-bold text-foreground">{selectedMemory.caption}</h3>
+                    </div>
+                  </motion.div>
+                )}
+              </DialogContent>
+            </Dialog>
 
             {/* Modern Navigation Controls */}
             <div className="flex justify-center gap-4 mt-8">
