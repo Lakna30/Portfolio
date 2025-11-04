@@ -140,8 +140,8 @@ All colors MUST be HSL.
     transition: var(--transition-smooth);
   }
   
-  body:not(.light) .gradient-text:hover {
-    filter: drop-shadow(0 0 8px hsl(0 0% 100% / 0.6)) 
-            drop-shadow(0 0 16px hsl(var(--glow-primary) / 0.4));
+  body:not(.light) .gradient-text {
+    filter: drop-shadow(0 0 6px hsl(0 0% 100% / 0.3)) 
+            drop-shadow(0 0 12px hsl(var(--glow-primary) / 0.25));
   }
 }
