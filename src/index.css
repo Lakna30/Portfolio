@@ -137,16 +137,5 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: var(--transition-smooth);
-  }
-  
-  .gradient-text:hover {
-    -webkit-text-stroke: 1px hsl(0 0% 100% / 0.8);
-    text-shadow: 0 0 30px hsl(var(--glow-primary) / 0.8);
-  }
-  
-  .light .gradient-text:hover {
-    -webkit-text-stroke: 1px hsl(260 50% 10% / 0.3);
-    text-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5);
   }
 }
