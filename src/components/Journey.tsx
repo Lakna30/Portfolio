@@ -1,5 +1,7 @@
-import { GraduationCap, School, UserCheck, Users, Medal, Trophy } from "lucide-react";
+import { UserCheck, Users, Medal, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import SliitLogo from "@/assets/sliit-logo.png";
+import SujathaLogo from "@/assets/sujatha-logo.png";
 import GCS from "@/assets/GCS International.jpg";
 import NationalPair25 from "@/assets/NationalPair25.jpg";
 import NationalInd25 from "@/assets/NationalInd25.jpg";
@@ -48,14 +50,14 @@ const Journey = () => {
   }, [api]);
   const education = [
     {
-      icon: GraduationCap,
+      logo: SliitLogo,
       title: "BSc(Hons) in Information Technology Specializing in Software Engineering",
       institution: "Sri Lanka Institute of Information Technology (SLIIT)",
       year: "2023 - Present",
       description: "CGPA : 3.39/4.0",
     },
     {
-      icon: School,
+      logo: SujathaLogo,
       title: "Secondary Education",
       institution: "Sujatha Vidyalaya Matara",
       year: "2014 - 2023",
@@ -223,11 +225,11 @@ const Journey = () => {
               >
                 <Card className="p-8 bg-card border-primary/20 hover:border-primary/50 transition-all duration-300 glow-border group h-full">
                   <motion.div 
-                    className="w-16 h-16 mb-6 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center glow-box"
-                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    className="w-16 h-16 mb-6 rounded-full bg-white flex items-center justify-center glow-box overflow-hidden"
+                    whileHover={{ scale: 1.2 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <edu.icon className="h-8 w-8 text-primary-foreground" />
+                    <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain p-2" />
                   </motion.div>
                   
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
