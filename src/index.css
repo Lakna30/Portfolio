@@ -138,6 +138,7 @@ All colors MUST be HSL.
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: var(--transition-smooth);
+    filter: drop-shadow(0 0 1px hsl(0 0% 100% / 0.4));
   }
   
   body:not(.light) .gradient-text:hover {
