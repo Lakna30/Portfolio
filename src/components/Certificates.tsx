@@ -32,28 +32,28 @@ const certificates = [
 
 const Certificates = () => {
   return (
-    <section id="certificates" className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+    <section id="certificates" className="py-20 md:py-32 relative">
+      <div className="container mx-auto px-6">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-            <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Certifications</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">
-            Certificates & Achievements
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional certifications and achievements that validate my expertise
-          </p>
-        </motion.div>
+          Certificates
+        </motion.h2>
+        <motion.p 
+          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          Professional certifications and achievements that validate my expertise
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
