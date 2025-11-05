@@ -71,19 +71,19 @@ const Certificates = () => {
                   />
                 </div>
                 <CardHeader>
-                  <div className="flex justify-end mb-2">
-                    <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded-full">
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors flex-1">
+                      {cert.title}
+                    </CardTitle>
+                    <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded-full whitespace-nowrap">
                       {cert.date}
                     </span>
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                    {cert.title}
-                  </CardTitle>
-                  <CardDescription className="font-medium text-foreground/70">
+                  <CardDescription className="font-medium text-foreground/70 mb-4">
                     {cert.issuer}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-0">
                   <Button
                     size="sm"
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
