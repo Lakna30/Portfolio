@@ -48,7 +48,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-primary"
+              className="text-2xl md:text-3xl font-bold gradient-text"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
