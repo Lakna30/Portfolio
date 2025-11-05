@@ -2,6 +2,7 @@ import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaAndroid, FaPhp } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase, SiFigma } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 
@@ -17,6 +18,7 @@ const Skills = () => {
         { name: "CSS", level: 90, Icon: FaCss3Alt, color: "text-[#1572B6]" },
         { name: "HTML", level: 95, Icon: FaHtml5, color: "text-[#E34F26]" },
         { name: "JavaScript", level: 90, Icon: SiJavascript, color: "text-[#F7DF1E]" },
+        { name: "TypeScript", level: 85, Icon: SiTypescript, color: "text-[#3178C6]" },
       ],
     },
     {
