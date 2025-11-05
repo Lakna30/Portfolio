@@ -62,15 +62,22 @@ const Certificates = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 h-full border-primary/20 bg-card/50 backdrop-blur-sm">
+              <Card className="group hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 h-full border-primary/20 bg-card/50 backdrop-blur-sm overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={cert.image} 
+                    alt={cert.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
-                    <Award className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <Award className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded-full">
                       {cert.date}
                     </span>
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
                     {cert.title}
                   </CardTitle>
                   <CardDescription className="font-medium text-foreground/70">
@@ -78,9 +85,6 @@ const Certificates = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {cert.description}
-                  </p>
                   <Button
                     size="sm"
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
