@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -71,8 +71,7 @@ const Certificates = () => {
                   />
                 </div>
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-2">
-                    <Award className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  <div className="flex justify-end mb-2">
                     <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded-full">
                       {cert.date}
                     </span>
