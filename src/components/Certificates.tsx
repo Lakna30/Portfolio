@@ -82,9 +82,8 @@ const Certificates = () => {
                     {cert.description}
                   </p>
                   <Button
-                    variant="outline"
                     size="sm"
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
                     asChild
                   >
                     <a href={cert.link} target="_blank" rel="noopener noreferrer">
