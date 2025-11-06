@@ -106,7 +106,7 @@ const About = () => {
                 >
                   <achievement.Icon className="w-10 h-10 text-primary" />
                   <h4 className="text-4xl font-bold gradient-text">{achievement.title}</h4>
-                  <p className="text-sm text-muted-foreground text-center">{achievement.subtitle}</p>
+                  <p className="text-sm gradient-text text-center font-medium">{achievement.subtitle}</p>
                 </motion.div>
               ))}
             </div>
