@@ -1,7 +1,8 @@
 import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaAndroid, FaPhp } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaAndroid, FaPhp, FaJava } from "react-icons/fa";
+import { SiXml } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase, SiFigma } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
@@ -28,6 +29,7 @@ const Skills = () => {
         { name: "Node.js", level: 85, Icon: FaNodeJs, color: "text-[#339933]" },
         { name: "Express", level: 80, Icon: SiExpress, color: "text-gray-900 dark:text-white" },
         { name: "PHP", level: 75, Icon: FaPhp, color: "text-[#777BB4]" },
+        { name: "Java", level: 80, Icon: FaJava, color: "text-[#007396]" },
       ],
     },
     {
@@ -35,7 +37,7 @@ const Skills = () => {
       icon: Smartphone,
       skills: [
         { name: "Kotlin", level: 80, Icon: SiKotlin, color: "text-[#7F52FF]" },
-        { name: "Android", level: 85, Icon: FaAndroid, color: "text-[#3DDC84]" },
+        { name: "XML", level: 85, Icon: SiXml, color: "text-[#E34F26]" },
       ],
     },
     {
