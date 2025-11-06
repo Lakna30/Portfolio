@@ -3,7 +3,7 @@ import profileImage from "@/assets/profile.jpg";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const skills = ["Full-Stack Development", "Android Development", "UI/UX Design", "Cloud Platforms"];
+  const skills = ["6+ Completed Projects", "4+ Team Collaborations", "Full-Stack Developer", "UI/UX Designer"];
   return <section id="about" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
