@@ -1,9 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import profileImage from "@/assets/profile.jpg";
 import { motion } from "framer-motion";
+import { FolderKanban, Users } from "lucide-react";
 
 const About = () => {
-  const skills = ["6+ Completed Projects", "4+ Team Collaborations", "Full-Stack Developer", "UI/UX Designer"];
+  const achievements = [
+    { title: "6+", subtitle: "Completed Projects", Icon: FolderKanban },
+    { title: "4+", subtitle: "Team Collaborations", Icon: Users }
+  ];
   return <section id="about" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.h2 
@@ -89,19 +93,20 @@ const About = () => {
               I love blending code with creativity—from building scalable MERN, Java, and PHP web apps, to crafting smooth Android apps with Kotlin & XML, and designing intuitive UI/UX experiences that are as functional as they are delightful.
             </motion.p>
             
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {skills.map((skill, index) => (
+            <div className="grid grid-cols-2 gap-6 pt-6">
+              {achievements.map((achievement, index) => (
                 <motion.div 
-                  key={skill} 
-                  className="flex items-center gap-3 p-4 bg-card border border-primary/20 rounded-lg hover:border-primary/50 transition-all glow-border"
+                  key={achievement.subtitle} 
+                  className="flex flex-col items-center justify-center gap-3 p-8 bg-card border border-primary/20 rounded-xl hover:border-primary/50 transition-all glow-border"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, x: 10 }}
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
-                  <span className="text-sm font-medium">{skill}</span>
+                  <achievement.Icon className="w-10 h-10 text-primary" />
+                  <h4 className="text-4xl font-bold gradient-text">{achievement.title}</h4>
+                  <p className="text-sm text-muted-foreground text-center">{achievement.subtitle}</p>
                 </motion.div>
               ))}
             </div>
