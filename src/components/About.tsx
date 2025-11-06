@@ -5,8 +5,8 @@ import { FolderKanban, Users } from "lucide-react";
 
 const About = () => {
   const achievements = [
-    { title: "6+", subtitle: "Completed Projects", Icon: FolderKanban },
-    { title: "4+", subtitle: "Team Collaborations", Icon: Users }
+    { number: "6+", label1: "Completed", label2: "Projects", Icon: FolderKanban },
+    { number: "4+", label1: "Team", label2: "Collaborations", Icon: Users }
   ];
   return <section id="about" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
@@ -96,17 +96,18 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6 pt-6">
               {achievements.map((achievement, index) => (
                 <motion.div 
-                  key={achievement.subtitle} 
-                  className="flex flex-col items-center justify-center gap-3 p-8 bg-card border border-primary/20 rounded-xl hover:border-primary/50 transition-all glow-border"
+                  key={achievement.number} 
+                  className="flex flex-col items-center justify-center gap-2 p-8 bg-card border border-primary/20 rounded-xl hover:border-primary/50 transition-all glow-border"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <achievement.Icon className="w-10 h-10 text-primary" />
-                  <h4 className="text-4xl font-bold gradient-text">{achievement.title}</h4>
-                  <p className="text-sm gradient-text text-center font-medium">{achievement.subtitle}</p>
+                  <achievement.Icon className="w-10 h-10 text-primary mb-2" />
+                  <h4 className="text-5xl font-bold gradient-text">{achievement.number}</h4>
+                  <p className="text-base font-semibold gradient-text">{achievement.label1}</p>
+                  <p className="text-muted-foreground text-sm">{achievement.label2}</p>
                 </motion.div>
               ))}
             </div>
