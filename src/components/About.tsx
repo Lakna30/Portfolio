@@ -104,10 +104,10 @@ const About = () => {
                   transition={{ delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <achievement.Icon className="w-10 h-10 text-primary mb-2" />
-                  <h4 className="text-5xl font-bold gradient-text">{achievement.number}</h4>
-                  <p className="text-base font-semibold gradient-text">{achievement.label1}</p>
-                  <p className="text-muted-foreground text-sm">{achievement.label2}</p>
+                  <achievement.Icon className="w-8 h-8 text-primary mb-1" />
+                  <h4 className="text-3xl font-bold gradient-text">{achievement.number}</h4>
+                  <p className="text-sm font-semibold gradient-text">{achievement.label1}</p>
+                  <p className="text-muted-foreground text-xs">{achievement.label2}</p>
                 </motion.div>
               ))}
             </div>
