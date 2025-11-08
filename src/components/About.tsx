@@ -93,11 +93,11 @@ const About = () => {
               I love blending code with creativity—from building scalable MERN, Java, and PHP web apps, to crafting smooth Android apps with Kotlin & XML, and designing intuitive UI/UX experiences that are as functional as they are delightful.
             </motion.p>
             
-            <div className="grid grid-cols-2 gap-6 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
               {achievements.map((achievement, index) => (
                 <motion.div 
                   key={achievement.number} 
-                  className="flex flex-col items-center justify-center gap-2 p-8 bg-card border border-primary/20 rounded-xl hover:border-primary/50 transition-all glow-border"
+                  className="flex flex-col items-center justify-center gap-1 py-6 px-8 bg-card border border-primary/20 rounded-xl hover:border-primary/50 transition-all glow-border"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -105,9 +105,8 @@ const About = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <achievement.Icon className="w-8 h-8 text-primary mb-1" />
-                  <h4 className="text-3xl font-bold gradient-text">{achievement.number}</h4>
-                  <p className="text-sm font-semibold gradient-text">{achievement.label1}</p>
-                  <p className="text-muted-foreground text-xs">{achievement.label2}</p>
+                  <h4 className="text-2xl font-bold text-foreground">{achievement.number}</h4>
+                  <p className="text-xs text-muted-foreground">{achievement.label2}</p>
                 </motion.div>
               ))}
             </div>
