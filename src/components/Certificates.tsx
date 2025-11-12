@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import python from "@/assets/Python.jpg";
+import java from "@/assets/Java.jpg";
+import node from "@/assets/Node.js.jpg";
+import cHash from "@/assets/C_Hash.jpg";
 
 const certificates = [
   {
@@ -10,7 +14,7 @@ const certificates = [
     date: "2024",
     description: "Description of the certification and skills acquired",
     link: "#",
-    image: "/placeholder.svg",
+    image: python,
   },
   {
     title: "Advanced Training",
@@ -18,7 +22,7 @@ const certificates = [
     date: "2023",
     description: "Specialized training in advanced techniques",
     link: "#",
-    image: "/placeholder.svg",
+    image: java,
   },
   {
     title: "Technical Certification",
@@ -26,7 +30,15 @@ const certificates = [
     date: "2023",
     description: "Certified in specific technical skills",
     link: "#",
-    image: "/placeholder.svg",
+    image: node,
+  },
+  {
+    title: "Technical Certification",
+    issuer: "Tech Organization",
+    date: "2023",
+    description: "Certified in specific technical skills",
+    link: "#",
+    image: cHash,
   },
 ];
 

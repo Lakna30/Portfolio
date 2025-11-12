@@ -46,10 +46,9 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xl font-bold">
-            <Code2 className="text-primary" />
+          <div className="flex items-center gap-2 text-3xl font-bold">
+            <span className="text-primary" />
             <span className="gradient-text">Lakna</span>
-            <span className="text-accent">{"</>"}</span>
           </div>
           
           <ul className="hidden md:flex items-center gap-8">

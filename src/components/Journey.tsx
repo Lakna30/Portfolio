@@ -1,7 +1,7 @@
 import { UserCheck, Users, Medal, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import SliitLogo from "@/assets/sliit-logo.png";
-import SujathaLogo from "@/assets/sujatha-logo.png";
+import SujathaLogo from "@/assets/sujatha-logo.jpg";
 import GCS from "@/assets/GCS International.jpg";
 import NationalPair25 from "@/assets/NationalPair25.jpg";
 import NationalInd25 from "@/assets/NationalInd25.jpg";
