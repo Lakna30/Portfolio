@@ -2,7 +2,7 @@ import { Code2, Server, Smartphone, Database, Wrench } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaAndroid, FaPhp, FaJava } from "react-icons/fa";
-import { SiXml } from "react-icons/si";
+import { SiAdobexd, SiSketch, SiXml } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 import { SiNextdotjs, SiTailwindcss, SiJavascript, SiExpress, SiKotlin, SiMongodb, SiMysql, SiSqlite, SiFirebase, SiFigma } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
@@ -73,6 +73,18 @@ const Skills = () => {
           Icon: SiFigma, 
           color: "text-[#F24E1E]" 
         },
+        { 
+      name: "Adobe XD",
+      level: 75,
+      Icon: SiAdobexd, 
+      color: "text-[#FF61F6]"
+    },
+    { 
+      name: "Sketch",
+      level: 70,
+      Icon: SiSketch, 
+      color: "text-[#F7B500]"
+    },
       ],
     },
   ];

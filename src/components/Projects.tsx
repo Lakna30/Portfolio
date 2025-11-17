@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import financeProject from "@/assets/project-finance.jpg";
-import fashionProject from "@/assets/project-fashion.jpg";
-import supplementProject from "@/assets/project-supplement.jpg";
-import uxProject from "@/assets/ux-project.png";
+import finexa from "@/assets/Finexa.png";
+import supplement from "@/assets/Supplement.png";
+import portfolio from "@/assets/Portfolio.png";
+import noura from "@/assets/NOURA.png";
+import glowy from "@/assets/Glowy.png";
 
 const Projects = () => {
   const projectCategories = [
@@ -16,9 +17,17 @@ const Projects = () => {
       icon: <LayoutGrid className="w-5 h-5" />,
       projects: [
         {
+          title: "Glowy Skincare Store",
+          description: "Web application featuring skincare products, secure login & admin product control",
+          image: glowy,
+          technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
+          repo: "https://github.com/Lakna30",
+          demo: "#",
+        },
+        {
           title: "NOURA Fashion Store",
           description: "E-commerce platform with user auth, product catalog & secure checkout",
-          image: fashionProject,
+          image: noura,
           technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
           repo: "https://github.com/Lakna30",
           demo: "#",
@@ -26,7 +35,7 @@ const Projects = () => {
         {
           title: "Gym Supplement Store",
           description: "Full-stack e-commerce with React, Node.js & MongoDB",
-          image: supplementProject,
+          image: supplement,
           technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
           repo: "https://github.com/Lakna30/Online-supplement-store",
           demo: "#",
@@ -34,7 +43,7 @@ const Projects = () => {
         {
           title: "Financial Tracking App",
           description: "Android app for personal finance management & budgeting",
-          image: financeProject,
+          image: finexa,
           technologies: ["Kotlin", "XML", "SQLite"],
           repo: "https://github.com/Lakna30/Personal-Finance-Tracker",
           demo: "#",
@@ -42,7 +51,7 @@ const Projects = () => {
         {
           title: "Portfolio Redesign",
           description: "Modern UI/UX design for a professional portfolio website",
-          image: uxProject,
+          image: portfolio,
           technologies: ["Figma", "Adobe XD", "User Research", "Wireframing"],
           repo: "#",
           demo: "#",
@@ -57,7 +66,7 @@ const Projects = () => {
         {
           title: "NOURA Fashion Store",
           description: "E-commerce platform with user auth, product catalog & secure checkout",
-          image: fashionProject,
+          image: noura,
           technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
           repo: "https://github.com/Lakna30",
           demo: "#",
@@ -65,7 +74,7 @@ const Projects = () => {
         {
           title: "Gym Supplement Store",
           description: "Full-stack e-commerce with React, Node.js & MongoDB",
-          image: supplementProject,
+          image: supplement,
           technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
           repo: "https://github.com/Lakna30/Online-supplement-store",
           demo: "#",
@@ -80,7 +89,7 @@ const Projects = () => {
         {
           title: "Financial Tracking App",
           description: "Android app for personal finance management & budgeting",
-          image: financeProject,
+          image: finexa,
           technologies: ["Kotlin", "XML", "SQLite"],
           repo: "https://github.com/Lakna30/Personal-Finance-Tracker",
           demo: "#",
@@ -95,7 +104,7 @@ const Projects = () => {
         {
           title: "Portfolio Redesign",
           description: "Modern UI/UX design for a professional portfolio website",
-          image: uxProject,
+          image: portfolio,
           technologies: ["Figma", "Adobe XD", "User Research", "Wireframing"],
           repo: "#",
           demo: "#",

@@ -5,7 +5,7 @@ import { FolderKanban, Users } from "lucide-react";
 
 const About = () => {
   const achievements = [
-    { number: "6+ Completed", label2: "Projects", Icon: FolderKanban },
+    { number: "10+ Completed", label2: "Projects", Icon: FolderKanban },
     { number: "4+ Collaborations", label2: "Team Projects", Icon: Users }
   ];
   return <section id="about" className="py-20 md:py-32 relative">

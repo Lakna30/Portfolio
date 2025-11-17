@@ -6,39 +6,67 @@ import python from "@/assets/Python.jpg";
 import java from "@/assets/Java.jpg";
 import node from "@/assets/Node.js.jpg";
 import cHash from "@/assets/C_Hash.jpg";
+import atlas from "@/assets/Atlas Administrator.jpg";
+import modeling from "@/assets/Data Modeling.jpg";
+import admin from "@/assets/Database Admin.jpg";
+import skills from "@/assets/Skills.jpg";
 
 const certificates = [
   {
-    title: "Professional Certificate",
-    issuer: "Certification Authority",
-    date: "2024",
-    description: "Description of the certification and skills acquired",
-    link: "#",
+    title: "Python Developer Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/WlhbPGTLT1GsnOG7Y2V6ow",
     image: python,
   },
   {
-    title: "Advanced Training",
-    issuer: "Training Institute",
-    date: "2023",
-    description: "Specialized training in advanced techniques",
-    link: "#",
+    title: "Java Developer Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/4C2FiCBQTj6o5tUg5GEqZA",
     image: java,
   },
   {
-    title: "Technical Certification",
-    issuer: "Tech Organization",
-    date: "2023",
-    description: "Certified in specific technical skills",
-    link: "#",
+    title: "Node.js Developer Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/B59G9K05Rhm154-S4YcciQ",
     image: node,
   },
   {
-    title: "Technical Certification",
-    issuer: "Tech Organization",
-    date: "2023",
-    description: "Certified in specific technical skills",
-    link: "#",
+    title: "C# Developer Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/pk44JfBaQVad6ra4esP0GQ",
     image: cHash,
+  },
+  {
+    title: "Atlas Administrator Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/-TIxHqbcSFiAFukysFqFWw",
+    image: atlas,
+  },
+  {
+    title: "Data Modeling Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/J_AePjteTdC_RJ42p7am6w",
+    image: modeling,
+  },
+  {
+    title: "Database Admin Path",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://learn.mongodb.com/c/YVtZjtKWSD2CHAFH6kj-wA",
+    image: admin,
+  },
+  {
+    title: "Core Concepts & Architecture",
+    issuer: "MongoDB",
+    date: "2025",
+    link: "https://www.credly.com/badges/eea82e8c-4daf-428a-bbc2-ae6fd7a1029a/linked_in_profile",
+    image: skills,
   },
 ];
 
