@@ -104,13 +104,13 @@ const Skills = () => {
           My Skills
         </motion.h2>
         <motion.p 
-          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
+          className="text-center text-gray-600 dark:text-[#C0C0C0] mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Here are the technologies and tools I work with to bring ideas to life
+          Here are the technologies and tools I work with to turn ideas into reality
         </motion.p>
         
         <div className="max-w-6xl mx-auto">

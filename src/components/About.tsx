@@ -80,7 +80,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              Over the past few years, I've turned my passion for technology into hands-on expertise in full-stack web development, mobile apps, and cloud computing.
+              Over the past few years, I've turned my passion for technology into hands-on expertise in full-stack web development, mobile apps, and UI/UX design.
             </motion.p>
             
             <motion.p 

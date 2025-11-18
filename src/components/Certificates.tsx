@@ -84,7 +84,7 @@ const Certificates = () => {
           Certificates
         </motion.h2>
         <motion.p 
-          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
+          className="text-center text-gray-600 dark:text-[#C0C0C0] mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

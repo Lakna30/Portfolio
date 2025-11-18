@@ -193,13 +193,13 @@ const Journey = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-center text-muted-foreground max-w-2xl mx-auto mb-16"
+          className="text-center text-gray-600 dark:text-[#C0C0C0] max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          My academic journey and extracurricular activities that shaped my expertise and leadership.
+          My academic and extracurricular experiences that shaped my skills and leadership
         </motion.p>
 
         {/* Education Section */}
@@ -241,7 +241,7 @@ const Journey = () => {
                     <p className="text-sm text-muted-foreground">{edu.year}</p>
                   </div>
                   
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-gray-600 dark:text-[#A3A3A3] leading-relaxed">
                     {edu.description}
                   </p>
                 </Card>
@@ -303,7 +303,7 @@ const Journey = () => {
                       <p className="text-sm text-muted-foreground">{activity.year}</p>
                     </div>
                     
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-gray-600 dark:text-[#A3A3A3] leading-relaxed">
                       {activity.description}
                     </p>
                   </div>
@@ -325,13 +325,13 @@ const Journey = () => {
             Journey Memories
           </motion.h3>
           <motion.p 
-            className="text-center text-muted-foreground mb-12"
+            className="text-center text-gray-600 dark:text-[#C0C0C0] mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            A glimpse into my journey, memories, and moments that define who I am.
+            A glimpse into my journey, memories, and moments that define who I am
           </motion.p>
           
           <motion.div
