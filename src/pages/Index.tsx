@@ -11,7 +11,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-hidden">
       <AnimatedBackground />
       <Navigation />
       <Hero />

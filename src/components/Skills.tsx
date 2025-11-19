@@ -92,10 +92,10 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="skills" className="py-20 md:py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-16 sm:py-20 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -115,7 +115,7 @@ const Skills = () => {
         
         <div className="max-w-6xl mx-auto">
           {/* Category Tabs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
             {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
@@ -130,7 +130,7 @@ const Skills = () => {
                 >
                   <div className="flex items-center gap-2">
                     <Icon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{category.category}</span>
+                    <span className="inline">{category.category}</span>
                   </div>
                 </button>
               );
@@ -139,7 +139,7 @@ const Skills = () => {
 
           {/* Skills Grid */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

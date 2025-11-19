@@ -25,13 +25,13 @@ const Hero = () => {
   }, []);
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20">
+    <section id="home" className="relative min-h-screen flex items-center pt-16 sm:pt-20">
       {/* Theme Toggle Button */}
       <Button
         variant="ghost"
         size="icon"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="fixed top-24 right-6 z-50 w-12 h-12 rounded-full hover:bg-primary/10 glow-border"
+        className="fixed top-20 right-4 sm:top-24 sm:right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-primary/10 glow-border"
       >
         {theme === "dark" ? (
           <Sun className="h-6 w-6 text-primary transition-all" />
@@ -40,10 +40,45 @@ const Hero = () => {
         )}
       </Button>
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Profile Image - Shows first on mobile, right on desktop */}
           <motion.div 
-            className="space-y-6"
+            className="flex justify-center md:order-last"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative">
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-30"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ 
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+              <motion.div 
+                className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary glow-box"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img 
+                  src={profileImage} 
+                  alt="Lakna Vidanapathirana" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+          
+          {/* Text Content - Shows second on mobile, left on desktop */}
+          <motion.div 
+            className="space-y-6 md:order-first"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -58,7 +93,7 @@ const Hero = () => {
             </motion.h2>
             
             <motion.h1 
-              className="text-4xl md:text-6xl font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -149,39 +184,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          <motion.div 
-            className="flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="relative">
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-30"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360]
-                }}
-                transition={{ 
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-              <motion.div 
-                className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary glow-box"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src={profileImage} 
-                  alt="Lakna Vidanapathirana" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
       </div>
     </section>
   );

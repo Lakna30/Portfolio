@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Code2 } from "lucide-react";
+import { Code2, Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +66,38 @@ const Navigation = () => {
               </li>
             ))}
           </ul>
+          
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+        
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border">
+            <ul className="flex flex-col py-4">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`block w-full text-left px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-primary/10 ${
+                      activeSection === item.id ? "text-primary bg-primary/5" : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );

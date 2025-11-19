@@ -180,10 +180,10 @@ const Journey = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 md:py-32 pb-0 relative">
-      <div className="container mx-auto px-6">
+    <section id="journey" className="py-16 sm:py-20 md:py-32 pb-0 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

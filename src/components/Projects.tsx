@@ -271,10 +271,10 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-16 sm:py-20 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -294,12 +294,12 @@ const Projects = () => {
         </motion.p>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12 w-full max-w-6xl mx-auto px-6">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-6 mb-12 w-full max-w-6xl mx-auto px-4 sm:px-6">
           {projectCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-14 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm ${
+              className={`px-4 sm:px-14 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm ${
                 activeCategory === category.id
                   ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20"
                   : "bg-card/50 text-muted-foreground hover:bg-card hover:text-foreground"
@@ -312,7 +312,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 sm:px-6">
           {getActiveProjects().map((project, index) => (
             <motion.div
               key={`${project.title}-${index}`}
