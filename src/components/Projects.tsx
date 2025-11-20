@@ -14,6 +14,7 @@ import yoga from "@/assets/Yoga.png";
 import cupcake from "@/assets/Cupcake.png";
 import event from "@/assets/Event.png";
 import popsicle from "@/assets/Popsicle.png";
+import worksense from "@/assets/WorkSense.png";
 
 const Projects = () => {
   const projectCategories = [
@@ -37,6 +38,14 @@ const Projects = () => {
           technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JavaScript"],
           repo: "https://github.com/Lakna30/Real-Fitness-Gym-Management-System",
           demo: "https://www.figma.com/proto/HMVnk2HQzC7giHhgqqd2XJ/Real-Fitness?page-id=0%3A1&node-id=4-1045&p=f&viewport=94%2C163%2C0.5&t=yMT4qrCtx7N1ZzuB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A1045",
+        },
+        {
+          title: "WorkSense Smart Industry - Client Project",
+          description: "Smart industry platform with real-time hazard monitoring, workflow management, asset tracking, scheduling, and employee operations.",
+          image: worksense,
+          technologies: ["React", "Tailwind CSS", "JavaScript", "PostgreSQL", "ESP32", "MQTT"],
+          repo: "https://github.com/Lakna30/WorkSense-Smart-Industry-Management-System",
+          demo: "#",
         },
         {
           title: "NOURA Fashion Store",
@@ -132,6 +141,14 @@ const Projects = () => {
           technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JavaScript"],
           repo: "https://github.com/Lakna30/Real-Fitness-Gym-Management-System",
           demo: "https://www.figma.com/proto/HMVnk2HQzC7giHhgqqd2XJ/Real-Fitness?page-id=0%3A1&node-id=4-1045&p=f&viewport=94%2C163%2C0.5&t=yMT4qrCtx7N1ZzuB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A1045",
+        },
+        {
+          title: "WorkSense Smart Industry - Client Project",
+          description: "Smart industry platform with real-time hazard monitoring, workflow management, asset tracking, scheduling, and employee operations.",
+          image: worksense,
+          technologies: ["React", "Tailwind CSS", "JavaScript", "PostgreSQL", "ESP32", "MQTT"],
+          repo: "https://github.com/Lakna30/WorkSense-Smart-Industry-Management-System",
+          demo: "#",
         },
         {
           title: "NOURA Fashion Store",
