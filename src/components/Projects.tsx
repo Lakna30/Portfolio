@@ -29,7 +29,7 @@ const Projects = () => {
           image: glowy,
           technologies: ["React", "Tailwind CSS", "JavaScript", "Firebase"],
           repo: "https://github.com/Lakna30/Glowy_Mini-E-Commerce-Store",
-          demo: "https://www.figma.com/proto/mLfljH3JbV7VD3KjxCSm2M/Untitled?page-id=0%3A1&node-id=75-58&p=f&viewport=-878%2C-361%2C0.5&t=oJWxWgVMcBMfg1fP-1&scaling=scale-down&content-scaling=fixed",
+          demo: "https://glowy-mini-e-commerce-store.vercel.app/",
         },
         {
           title: "Real Fitness - Client Project",
@@ -132,7 +132,7 @@ const Projects = () => {
           image: glowy,
           technologies: ["React", "Tailwind CSS", "JavaScript", "Firebase"],
           repo: "https://github.com/Lakna30/Glowy_Mini-E-Commerce-Store",
-          demo: "https://www.figma.com/proto/mLfljH3JbV7VD3KjxCSm2M/Untitled?page-id=0%3A1&node-id=75-58&p=f&viewport=-878%2C-361%2C0.5&t=oJWxWgVMcBMfg1fP-1&scaling=scale-down&content-scaling=fixed",
+          demo: "https://glowy-mini-e-commerce-store.vercel.app/",
         },
         {
           title: "Real Fitness - Client Project",
@@ -266,6 +266,15 @@ const Projects = () => {
 
   const [activeCategory, setActiveCategory] = useState("all");
 
+  // Titles for which the Live Demo button should be disabled
+  const disabledDemoTitles = new Set([
+    "WorkSense Smart Industry - Client Project",
+    "NOURA Fashion Store",
+    "Gym Supplement Store",
+    "HuddleUp Event Management System",
+    "Virtual Coaching App",
+  ]);
+
   // Get all projects for the active category
   const getActiveProjects = () => {
     if (activeCategory === "all") {
@@ -391,25 +400,38 @@ const Projects = () => {
                       </a>
                     </Button>
                     
-                    <Button 
-                      size="sm"
-                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-xs"
-                      asChild
-                    >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        {['Glowy Skincare Store', 'Real Fitness - Client Project', 'Financial Tracking App'].includes(project.title) ? (
-                          <>
-                            <Palette className="mr-2 h-3.5 w-3.5" />
-                            Figma
-                          </>
-                        ) : (
-                          <>
-                            <ExternalLink className="mr-2 h-3.5 w-3.5" />
-                            Live Demo
-                          </>
-                        )}
-                      </a>
-                    </Button>
+                    {disabledDemoTitles.has(project.title) ? (
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-gradient-to-r from-primary to-secondary opacity-50 cursor-not-allowed transition-opacity text-xs"
+                        disabled
+                      >
+                        <span className="flex items-center justify-center gap-2">
+                          <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                          Live Demo
+                        </span>
+                      </Button>
+                    ) : (
+                      <Button 
+                        size="sm"
+                        className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-xs"
+                        asChild
+                      >
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          { (project.figma || (project.demo && project.demo.includes("figma.com"))) ? (
+                            <>
+                              <Palette className="mr-2 h-3.5 w-3.5" />
+                              Figma
+                            </>
+                          ) : (
+                            <>
+                              <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                              Live Demo
+                            </>
+                          )}
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
