@@ -2,12 +2,12 @@ import { Download, Github, Linkedin, Instagram, Mail, Sun, Moon } from "lucide-r
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile.jpg";
 import { GraduationCap } from "lucide-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/providers/ThemeProvider";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [currentRole, setCurrentRole] = useState(0);
   
   const roles = [
@@ -30,7 +30,7 @@ const Hero = () => {
       <Button
         variant="ghost"
         size="icon"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        onClick={toggleTheme}
         className="fixed top-20 right-4 sm:top-24 sm:right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full hover:bg-primary/10 glow-border"
       >
         {theme === "dark" ? (
