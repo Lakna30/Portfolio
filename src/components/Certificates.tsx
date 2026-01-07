@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -71,6 +72,11 @@ const certificates = [
 ];
 
 const Certificates = () => {
+  const [showAll, setShowAll] = useState(false);
+  
+  // Show 3 items on mobile/large screens, 4 on medium screens by default
+  const initialItems = window.innerWidth >= 768 && window.innerWidth < 1024 ? 4 : 3;
+  const visibleCertificates = showAll ? certificates : certificates.slice(0, initialItems);
   return (
     <section id="certificates" className="py-16 sm:py-20 md:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6">
@@ -93,8 +99,8 @@ const Certificates = () => {
           Professional certifications and achievements that validate my expertise
         </motion.p>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certificates.map((cert, index) => (
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {visibleCertificates.map((cert, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -139,6 +145,24 @@ const Certificates = () => {
             </motion.div>
           ))}
         </div>
+        
+        {certificates.length > initialItems && (
+          <motion.div 
+            className="flex justify-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Button
+              variant="outline"
+              className="px-8 py-6 text-base hover:bg-transparent hover:text-primary hover:border-primary"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? 'Show Less' : 'View All Certificates'}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

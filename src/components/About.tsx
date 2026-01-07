@@ -5,7 +5,7 @@ import { FolderKanban, Users } from "lucide-react";
 
 const About = () => {
   const achievements = [
-    { number: "11+ Completed", label2: "Projects", Icon: FolderKanban },
+    { number: "12+ Completed", label2: "Projects", Icon: FolderKanban },
     { number: "4+ Collaborations", label2: "Team Projects", Icon: Users }
   ];
   return <section id="about" className="py-20 md:py-32 relative">
@@ -93,7 +93,7 @@ const About = () => {
               I love blending code with creativity—from building scalable MERN, Java, and PHP web apps, to crafting smooth Android apps with Kotlin & XML, and designing intuitive UI/UX experiences that are as functional as they are delightful.
             </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
+            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-4 pt-6">
               {achievements.map((achievement, index) => (
                 <motion.div 
                   key={achievement.number} 
