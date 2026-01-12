@@ -16,6 +16,7 @@ import event from "@/assets/Event.png";
 import popsicle from "@/assets/Popsicle.png";
 import worksense from "@/assets/WorkSense.png";
 import cafera from "@/assets/cafera.png";
+import hotel from "@/assets/Hotel.png";
 
 const Projects = () => {
   const projectCategories = [
@@ -24,6 +25,14 @@ const Projects = () => {
       title: "All Projects",
       icon: <LayoutGrid className="w-5 h-5" />,
       projects: [
+        {
+          title: "The Redison Blue",
+          description: "A responsive hotel website featuring a landing page, services, room selection, about, and contact sections with smooth animations and modern UI",
+          image: hotel,
+          technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+          repo: "https://github.com/Lakna30/The-Redison-Blue",
+          demo: "https://the-redison-blue.vercel.app/",
+        },
         {
           title: "Caféra Cafe",
           description: "A responsive cafe website showcasing modern UI design, smooth animations, and frontend best practices",
@@ -135,6 +144,14 @@ const Projects = () => {
       title: "Web Development",
       icon: <Monitor className="w-5 h-5" />,
       projects: [
+        {
+          title: "The Redison Blue",
+          description: "A responsive hotel website featuring a landing page, services, room selection, about, and contact sections with smooth animations and modern UI",
+          image: hotel,
+          technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+          repo: "https://github.com/Lakna30/The-Redison-Blue",
+          demo: "https://the-redison-blue.vercel.app/",
+        },
         {
           title: "Caféra Cafe",
           description: "A responsive cafe website showcasing modern UI design, smooth animations, and frontend best practices",
