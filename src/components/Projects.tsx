@@ -17,6 +17,8 @@ import popsicle from "@/assets/Popsicle.png";
 import worksense from "@/assets/WorkSense.png";
 import cafera from "@/assets/cafera.png";
 import hotel from "@/assets/Hotel.png";
+import restaurant from "@/assets/Restaurant.png";
+import travel from "@/assets/Travel.png";
 
 const Projects = () => {
   const projectCategories = [
@@ -127,6 +129,22 @@ const Projects = () => {
           image: cupcake,
           technologies: ["Figma", "Prototyping", "Smart Animate", "Motion UI"],
           figma: "https://www.figma.com/proto/INyHGMjx5lK7JwvgR5DCze/Cupcake-Animation?page-id=0%3A1&node-id=3-190&p=f&viewport=310%2C101%2C0.25&t=VcDbeAk7rios50z2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A190",
+          demo: "#",
+        },
+        {
+          title: "Restaurant Website UI",
+          description: "A modern restaurant website UI with clear layouts & categorized menus for easy navigation.",
+          image: restaurant,
+          technologies: ["Figma", "Responsive Design"],
+          figma: "https://www.figma.com/design/qEcdoD1lcV8oVisvRdgwDq/Delicious--Bite?node-id=18-1524&t=rtW5jV1o0FygITGL-1",
+          demo: "#",
+        },
+        {
+          title: "Travel Website UI",
+          description: "Redesigned the travel website UI to enhance visual appeal, navigation, and user flow in line with client brand goals.",
+          image: travel,
+          technologies: ["Figma"],
+          figma: "https://www.figma.com/design/HibHFe5BEA5WSArNXdFI75/Ceylon-My-Dream?node-id=1-2&t=F0sv2yC5GrdxPCQB-1",
           demo: "#",
         },
         {
@@ -260,6 +278,22 @@ const Projects = () => {
           image: popsicle,
           technologies: ["Figma", "Prototyping", "Smart Animate", "Motion UI", "Custom Blob Shapes"],
           figma: "https://www.figma.com/proto/0IOTu948C17EjUEXUHbpYX/Melting?page-id=0%3A1&node-id=20-9&p=f&viewport=-1845%2C2751%2C0.5&t=vNGFE9h2nU21Cj8s-1&scaling=scale-down&content-scaling=fixed",
+          demo: "#",
+        },
+        {
+          title: "Restaurant Website UI",
+          description: "A modern restaurant website UI with clear layouts & categorized menus for easy navigation.",
+          image: restaurant,
+          technologies: ["Figma", "Responsive Design"],
+          figma: "https://www.figma.com/design/qEcdoD1lcV8oVisvRdgwDq/Delicious--Bite?node-id=18-1524&t=rtW5jV1o0FygITGL-1",
+          demo: "#",
+        },
+        {
+          title: "Travel Website UI",
+          description: "Redesigned the travel website UI to enhance visual appeal, navigation, and user flow in line with client brand goals.",
+          image: travel,
+          technologies: ["Figma"],
+          figma: "https://www.figma.com/design/HibHFe5BEA5WSArNXdFI75/Ceylon-My-Dream?node-id=1-2&t=F0sv2yC5GrdxPCQB-1",
           demo: "#",
         },
         {
