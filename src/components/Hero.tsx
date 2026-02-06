@@ -12,7 +12,7 @@ const Hero = () => {
   
   const roles = [
     "Software Engineer",
-    "Full-Stack Developer",
+    "Front-End Developer",
     "Mobile App Developer",
     "UI/UX Designer",
   ];
@@ -44,7 +44,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Profile Image - Shows first on mobile, right on desktop */}
           <motion.div 
-            className="flex justify-center md:order-last"
+            className="flex justify-center md:order-last mt-10 md:mt-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -123,7 +123,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Software Engineering undergraduate at SLIIT with a strong focus on web and mobile development and creative UI/UX design that blends functionality with aesthetics.
+              Software Engineering undergraduate at SLIIT with a strong focus on Front-End development and creative UI/UX design that blends functionality with aesthetics.
             </motion.p>
 
             <motion.div 
