@@ -16,8 +16,10 @@ import Independance23 from "@/assets/Independance23.png";
 import Independance24 from "@/assets/Independance24.jpg";
 import Usports from "@/assets/Usports.jpg";
 import Colors24 from "@/assets/Colors24.jpg";
+import Colors25 from "@/assets/Colors25.jpeg";
 import SouthAsian from "@/assets/South Asian.jpg";
 import Referee from "@/assets/Referee.jpg";
+import National26 from "@/assets/National26.jpeg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -69,16 +71,9 @@ const Journey = () => {
     {
       icon: UserCheck,
       title: "Assistant Taekwondo Coach",
-      organization: "Sri Lanka School Taekwondo Federation",
-      year: "2023 - Present",
-      description: "Registered assistant coach supporting school-level athlete training and development",
-    },
-    {
-      icon: Users,
-      title: "Assistant Taekwondo Coach",
       organization: "District Taekwondo Association - Matara",
       year: "2023 - Present",
-      description: "Coaching at Sujatha College and Anura College, guiding students in technique and discipline",
+      description: "Registered assistant coach under the Sri Lanka School Taekwondo Federation",
     },
     {
       icon: Medal,
@@ -93,6 +88,13 @@ const Journey = () => {
       organization: "SLIIT University Taekwondo Team",
       year: "2023 - Present",
       description: "Active participant in university sports programs and activities",
+    },
+    {
+      icon: Users,
+      title: "Taekwondo Women's Team Captain",
+      organization: "SLIIT University Taekwondo Team",
+      year: "2026",
+      description: "Driving athletic excellence and team strategy in university sports",
     },
   ];
 
@@ -176,6 +178,16 @@ const Journey = () => {
       image: Referee,
       caption: "Sportsmeet Assistant Taekwondo Referee",
       category: "Refereeing",
+    },
+    {
+      image: Colors25,
+      caption: "SLIIT Colors Awards 2026",
+      category: "Awards",
+    },
+    {
+      image: National26,
+      caption: "National Poomsae Championship 2026",
+      category: "Sports",
     },
   ];
 
