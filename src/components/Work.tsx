@@ -39,10 +39,10 @@ const Work = () => {
 		{
 			step: "02",
 			role: "Frontend Developer",
-			company: "CreatX Software",
+			company: "CreatX Software Limited",
 			location: "Remote",
 			period: "11/2025 – Present",
-			durationLabel: `${formatMonthLabel(currentMonthCount)} and counting`,
+			durationLabel: "Part-time",
 			summary: "Currently developing production UI experiences, refining reusable components, and improving overall frontend quality.",
 			current: true,
 		},
@@ -102,7 +102,7 @@ const Work = () => {
 
 										<div className="flex flex-col items-start sm:items-end gap-2">
 											<span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${experience.current ? "bg-secondary/15 text-secondary" : "bg-primary/15 text-primary"}`}>
-												{experience.current ? "Current role" : experience.durationLabel}
+												{experience.durationLabel}
 											</span>
 											<div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground sm:justify-end">
 												<span className="inline-flex items-center gap-1.5">
